@@ -7,6 +7,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,5 +46,18 @@ public class Converters {
         Type type = new TypeToken<List<DoctorList>>() {}.getType();
         List<DoctorList> doctorList = gson.fromJson(doctorListString, type);
         return doctorList;
+    }
+
+    @TypeConverter
+    public static BookingInfo fromBookingInfoString(String value) {
+        Type bookingInfoType = new TypeToken<BookingInfo>(){}.getType();
+        return new Gson().fromJson(value, bookingInfoType);
+    }
+
+    @TypeConverter
+    public static String fromBookingInfo(BookingInfo bookingInfo) {
+        Gson gson = new Gson();
+        String json = gson.toJson(bookingInfo);
+        return json;
     }
 }

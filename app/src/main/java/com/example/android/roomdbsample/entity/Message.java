@@ -3,10 +3,12 @@ package com.example.android.roomdbsample.entity;
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
+import android.arch.persistence.room.TypeConverter;
 import android.arch.persistence.room.TypeConverters;
 import android.graphics.Bitmap;
 import android.support.annotation.NonNull;
 
+import com.example.android.roomdbsample.utils.BookingInfo;
 import com.example.android.roomdbsample.utils.Converters;
 import com.example.android.roomdbsample.utils.DoctorList;
 
@@ -56,11 +58,14 @@ public class Message implements Serializable {
     @ColumnInfo(name = "time")
     public String time;
 
-    //public BookingInfo bookingInfo;
+    @ColumnInfo(name = "booking_info")
+    @TypeConverters(Converters.class)
+    public BookingInfo bookingInfo;
 
     @ColumnInfo(name = "doctor_list")
     @TypeConverters(Converters.class)
     public List<DoctorList> topCard;
+
    // public BottomCard bottomCard;
     //public List<Symptom> caseDetails;
     @ColumnInfo(name = "labs")
@@ -200,6 +205,14 @@ public class Message implements Serializable {
 
     public void setTime(String time) {
         this.time = time;
+    }
+
+    public BookingInfo getBookingInfo() {
+        return bookingInfo;
+    }
+
+    public void setBookingInfo(BookingInfo bookingInfo) {
+        this.bookingInfo = bookingInfo;
     }
 
     public List<DoctorList> getTopCard() {

@@ -25,7 +25,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintVertical_weight="1"
-        ></ListView>
+        />
     <TextView
         android:id="@+id/doctor_list_tv"
         app:layout_constraintTop_toBottomOf="@id/labs_list"
@@ -35,6 +35,37 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintVertical_weight="1"
-        ></TextView>
+        />
+    <TextView
+        android:id="@+id/doctor_qualification_tv"
+        app:layout_constraintTop_toBottomOf="@id/doctor_list_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintVertical_weight="1"
+        />
+    <TextView
+        android:id="@+id/booking_info_opd_label_tv"
+        app:layout_constraintTop_toBottomOf="@id/doctor_qualification_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintVertical_weight="1"
+        />
+    <TextView
+        android:id="@+id/booking_info_online_doctor_list_tv"
+        app:layout_constraintTop_toBottomOf="@id/booking_info_opd_label_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintVertical_weight="1"
+        />
+
 
 </android.support.constraint.ConstraintLayout>
